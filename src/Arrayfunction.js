@@ -4,14 +4,21 @@ import {useState} from 'react';
 
 function Arrayfunction (){
 
-   const [fruits , setFruits] = useState(["Apple","Mango","Orange","Peach","Pineapple"]); 
-
+   const [fruits , setFruits] = useState([]); 
+    const [text,setText] = useState("")
    const Adding = () =>{
-    alert("hello")
+    const newArr = [...fruits,text];
+    setFruits(newArr);
    }
+
+   const results = (event) =>{
+    const txt = event.target.value;
+    setText(txt)
+   }
+   
     return(
         <div>
-            <input type='text'/>
+            <input onChange={results} type='text'/>
            <button onClick={Adding}>Adding</button>
             <ul>
                 {
@@ -20,6 +27,7 @@ function Arrayfunction (){
                     })
                 }
             </ul>
+           
             
         </div>
     );
