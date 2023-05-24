@@ -7,8 +7,15 @@ function Arrayfunction (){
    const [fruits , setFruits] = useState([]); 
     const [text,setText] = useState("")
    const Adding = () =>{
+   if(text== ""){
+    setText("")
+   }
+   else{
     const newArr = [...fruits,text];
     setFruits(newArr);
+    setText("")
+   }
+    
    }
 
    const results = (event) =>{
@@ -18,7 +25,7 @@ function Arrayfunction (){
    
     return(
         <div>
-            <input onChange={results} type='text'/>
+            <input onChange={results} type='text' value={text}/>
            <button onClick={Adding}>Adding</button>
             <ul>
                 {

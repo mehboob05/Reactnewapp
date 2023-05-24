@@ -7,23 +7,32 @@ function Practice (){
     const [txt,setTxt] = useState("")
     
     const newitem = () =>{
-      const newAr = [...fruit,txt];
-      setFruit(newAr); 
-      setTxt("")
+        if(txt == ""){
+            setTxt("")
+        }
+        else{
+            const newAr = [...fruit,txt];
+            setFruit(newAr); 
+            setTxt("")
+        }
+     
     }
 
     const updateitem = (event) =>{
         setTxt(event.target.value);
     }
+
+
     return(
         <div>
            <br/>
            <input type="text" onChange={updateitem} value={txt}/>
            <button onClick={newitem}>Add New Item</button>
-           <ul>
+          
+           <ul type="circle">
               {
                 fruit.map( (item) =>{
-                    return <li>{item}</li>
+                    return <li>{item} </li>
                 })
               }
            </ul>
