@@ -21,7 +21,13 @@ function Practice (){
     const updateitem = (event) =>{
         setTxt(event.target.value);
     }
-
+// delete item 
+ const deleteitem = (item) => {
+        const res = fruit.filter( (elem) => {
+            return elem != item
+        })
+        setFruit(res)
+ }
 
     return(
         <div>
@@ -32,7 +38,7 @@ function Practice (){
            <ul type="circle">
               {
                 fruit.map( (item) =>{
-                    return <li>{item} </li>
+                    return <li>{item} <button onClick={ () =>{deleteitem(item)} }>X</button> </li>
                 })
               }
            </ul>

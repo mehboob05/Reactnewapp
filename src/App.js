@@ -2,6 +2,8 @@ import Calculator from './Calculator';
 import './App.css';
 import Arrayfunction from './Arrayfunction';
 // import Firstcom from './Firstcom';
+import Practice from './Practice';
+import Results from './Results';
 
 function App() {
   const name="Mehboob Ahmad";
@@ -12,6 +14,9 @@ function App() {
       <Calculator/>
       <br/>
       <Arrayfunction/>
+      <Practice/>
+     <hr/>
+     <Results/>
     </div>
   );
 }
